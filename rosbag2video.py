@@ -123,8 +123,9 @@ for files in range(0,len(opt_files)):
                         np_arr = np.fromstring(msg.data, np.uint8)
                         cv_image = cv2.imdecode(np_arr, cv2.CV_LOAD_IMAGE_COLOR)
                 else:
-                    print 'unsuportet format:', msg.format
-                    exit(1)
+                    pass
+                    #print 'unsuportet format:', msg.format
+                    #exit(1)
 
                 if len(msg.data)>0:
                     if not topic in t_first :
@@ -149,7 +150,8 @@ for files in range(0,len(opt_files)):
         except AttributeError:
             try:
                     pix_fmt=""
-                    if msg.encoding.find("mono8")!=-1 :
+                    #print(msg.encoding)
+                    if msg.encoding.find("mono8")!=-1 or msg.encoding.find("8UC1")!=-1:
                         pix_fmt = "gray"
                         #np_arr = np.fromstring(msg.data, np.uint8)
                         if opt_display_images:
