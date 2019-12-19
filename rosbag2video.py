@@ -22,16 +22,16 @@ import numpy as np
 import shlex, subprocess
 
 
-opt_fps =25.0
+opt_fps = 30.0
 opt_rate = 1
-opt_out_file=""
+opt_out_file = ""
 opt_fourcc = "XVID"
 opt_topic = ""
 opt_files = []
 opt_display_images = False;
 def print_help():
     print
-    print 'rosbag2video.py [--fps 25] [--rate 1] [-o outputfile] [-s (show video)] [-t topic] bagfile1 [bagfile2] ...'
+    print 'rosbag2video.py [--fps 30] [--rate 1] [-o outputfile] [-s (show video)] [-t topic] bagfile1 [bagfile2] ...'
     print
     print 'converts image sequence(s) in ros bag file(s) to video file(s) with fixed frame rate using avconv'
     print 'avconv needs to be installed! (sudo apt-get install libav-tools)'
